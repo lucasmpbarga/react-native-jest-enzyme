@@ -17,8 +17,7 @@ class Button extends Component {
 
   renderString = () => {
     const string = 'BB MEU TESTE DE STRING';
-    const newString = stringConverter(string);
-    return <Text>{newString}</Text>;
+    return <Text>{stringConverter(string)}</Text>;
   };
 
   render() {
