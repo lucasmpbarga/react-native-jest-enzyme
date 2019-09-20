@@ -8,13 +8,17 @@ class Button extends Component {
   }
 
   onPressHandler = () => {
-    const string = 'BB MEU TESTE DE STRING';
-    const newString = stringConverter(string);
     const {onPress, url} = this.props;
     if (url) {
       Linking.openURL(url);
     }
     onPress();
+  };
+
+  renderString = () => {
+    const string = 'BB MEU TESTE DE STRING';
+    const newString = stringConverter(string);
+    return <Text>{newString}</Text>;
   };
 
   render() {
@@ -34,6 +38,7 @@ class Button extends Component {
         onPress={this.onPressHandler}
         style={newButtonStyle}>
         <Text style={textStyle}>{label}</Text>
+        {this.renderString()}
       </TouchableOpacity>
     );
   }

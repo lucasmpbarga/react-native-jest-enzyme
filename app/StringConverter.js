@@ -1,6 +1,6 @@
 function stringConverter(string) {
   const strings = string.split(' ');
-  return 'new' + string;
+  return strings[0] + ' = string.split()';
   // const strings = string.split(' ');
   // const newString = [];
   // const exceptions = ['de', 'das', 'dos', 'bb'];

@@ -12,20 +12,23 @@ describe('Button', () => {
   // Better
   const mockOnPress = jest.fn();
   let instance;
+  let wrapper;
 
   beforeEach(() => {
-    instance = shallow(
+    wrapper = shallow(
       <Button
         label="test label"
         onPress={mockOnPress}
         url="https://www.test.com"
       />,
-    ).instance();
+    );
+    instance = wrapper.instance();
     jest.clearAllMocks();
   });
 
   it('should call onPress', () => {
     instance.onPressHandler();
+    console.log(wrapper.debug());
     expect(mockOnPress).toHaveBeenCalled();
     expect(mockOnPress).toHaveBeenCalledTimes(1);
   });
