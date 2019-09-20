@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Text, TouchableOpacity, Linking} from 'react-native';
+import stringConverter from './StringConverter';
 
 class Button extends Component {
   constructor(props) {
@@ -7,6 +8,8 @@ class Button extends Component {
   }
 
   onPressHandler = () => {
+    const string = 'BB MEU TESTE DE STRING';
+    const newString = stringConverter(string);
     const {onPress, url} = this.props;
     if (url) {
       Linking.openURL(url);
